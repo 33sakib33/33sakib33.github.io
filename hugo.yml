@@ -1,0 +1,6 @@
+baseURL: 'https://33sakib33.github.io/'
+languageCode: 'en-us'
+title: 'S-Thoughts'
+module:
+  imports:
+  - path: github.com/adityatelange/hugo-PaperMod

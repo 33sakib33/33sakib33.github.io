@@ -1,7 +1,0 @@
-baseURL: https://33sakib33.github.io/
-languageCode: en-us
-title: Sakib is Learning
-paginate: 5
-module:
-  imports:
-  - path: github.com/adityatelange/hugo-PaperMod
