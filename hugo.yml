@@ -59,9 +59,9 @@ params:
   # profile-mode
   profileMode:
     enabled: false # needs to be explicitly set
-    title: ExampleSite
-    subtitle: "This is subtitle"
-    imageUrl: "<img location>"
+    title: Nazmus Sakib Ahmed
+    subtitle: "Researcher, Machine Learning Engineer"
+    imageUrl: "![b](images/test.jpeg)"
     imageWidth: 120
     imageHeight: 120
     imageTitle: my image
@@ -73,16 +73,16 @@ params:
 
   # home-info mode
   homeInfoParams:
-    Title: "Hi there \U0001F44B"
+    Title: "Trying to Focus \U0001F44B"
     Content: Welcome to my blog
 
   socialIcons:
-    - name: x
-      url: "https://x.com/"
-    - name: stackoverflow
-      url: "https://stackoverflow.com"
+    - name: Linkedin
+      url: "https://www.linkedin.com/in/33sakib33//"
     - name: github
-      url: "https://github.com/"
+      url: "https://github.com/33sakib33"
+    - name: facebook
+      url: https://www.facebook.com/not.sakib
 
   analytics:
     google:
