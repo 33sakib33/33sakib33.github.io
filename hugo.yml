@@ -54,7 +54,7 @@ params:
   profileMode:
     enabled: true
     title: Nazmus Sakib Ahmed
-    subtitle: "Researcher · Lecturer at BRAC University · Co-founder at Factoryze"
+    subtitle: "ML Researcher · Lecturer at BRAC University · Co-founder at Factoryze"
     imageUrl: "images/profile.jpg"
     imageWidth: 140
     imageHeight: 140
