@@ -1,6 +1,6 @@
 ---
 title: "Projects"
-description: "Selected projects in machine learning, NLP, and software engineering."
+description: "Things I've built, explored, and tinkered with."
 ---
 
-A selection of projects from research and industry work. Source code is linked where available.
+I'll update this page with the stuff I do from time to time.
