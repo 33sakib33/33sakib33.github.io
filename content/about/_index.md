@@ -16,7 +16,7 @@ I am a researcher, engineer, educator, and entrepreneur working at the intersect
 ## Experience
 
 ### Co-founder | Factoryze
-*[Start date] – Present · [factoryze.tech](https://www.factoryze.tech)*
+*October 2023 – Present · [factoryze.tech](https://www.factoryze.tech)*
 
 Exploring how AI can be integrated into real-world products and businesses.
 
