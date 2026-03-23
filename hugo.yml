@@ -1,6 +1,6 @@
 baseURL: 'https://33sakib33.github.io/'
 languageCode: 'en-us'
-title: 'S-Thoughts'
+title: 'Latent Space'
 module:
   imports:
   - path: github.com/adityatelange/hugo-PaperMod
@@ -16,9 +16,9 @@ minify:
 
 params:
   env: production
-  title: S-Thoughts
-  description: "Personal blog and portfolio of Nazmus Sakib Ahmed — Deep Learning researcher, Lecturer at BRAC University, and writer."
-  keywords: [Blog, Portfolio, Machine Learning, Deep Learning, Research, AI, Fiction, Writing]
+  title: Latent Space
+  description: "Latent Space — Nazmus Sakib Ahmed. Researcher in deep learning and cognition, co-founder at Factoryze, lecturer at BRAC University."
+  keywords: [Deep Learning, Cognition, LLMs, Computer Vision, Research, AI, Writing, Factoryze]
   author: "Nazmus Sakib Ahmed"
   images: ["/images/og-image.png"]
   DateFormat: "January 2, 2006"
@@ -48,8 +48,9 @@ params:
     apple_touch_icon: "/images/apple-touch-icon.png"
 
   label:
-    text: "S-Thoughts"
-    iconHeight: 35
+    text: "Latent Space"
+    icon: /images/logo.svg
+    iconHeight: 22
 
   profileMode:
     enabled: false
