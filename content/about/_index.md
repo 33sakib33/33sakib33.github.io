@@ -13,54 +13,45 @@ I teach computer science at BRAC University, train Bangladesh's national AI olym
 
 ---
 
-## Highlights
-
-- Trained the Bangladesh team for the **International AI Olympiad** — they won silverware in Saudi Arabia
-- Published at the **29th International Conference on Knowledge-Based and Intelligent Information Engineering Systems**
-- **Top 3** in multiple national ML competitions (240+ teams, 98 teams, 94 teams)
-- MSc with a **4.00 GPA** while working part-time and co-founding a company
-
----
-
 ## Experience
 
-### Co-founder | [Factoryze](https://www.factoryze.tech)
+### Co-founder · [Factoryze](https://www.factoryze.tech)
 *October 2023 – Present*
 
-Building AI-powered products: a sales assistance platform using STT and generative AI, LLM integrations for edtech systems, document processing pipelines for complex content (images, equations, non-unicode text), and system/database architectures for e-commerce, CRM, and edtech using NestJS, FastAPI, PostgreSQL and MongoDB.
+Building AI-powered products end to end — from architecture to deployment. Work includes an STT + generative AI sales platform for a Singapore-based startup, LLM integrations for edtech systems, a document processing pipeline for complex content (images, equations, non-unicode text), and system design for e-commerce, CRM, and edtech using NestJS, FastAPI, PostgreSQL, and MongoDB.
 
-### Lecturer | BRAC University
+### Lecturer · BRAC University
 *January 2026 – Present*
 
-Teaching undergraduate CS. Mentoring students on research and careers in ML.
+Teaching undergraduate computer science. Courses this semester: Data Structures Lab (CSE220), Computer Graphics Lab (CSE423), Software Engineering (CSE470). If you're one of my students, feel free to reach out by email for anything course-related.
 
-### Academic Trainer & Problem Setter | Bangladesh AI Olympiad
+### Academic Trainer & Problem Setter · Bangladesh AI Olympiad
 *June 2024 – Present*
 
-Hands-on training for Bangladesh's international team. Topics: deep learning fundamentals, reinforcement learning, training best practices. The team won silverware at the International AI Olympiad, Saudi Arabia.
+Trained Bangladesh's national team for the International AI Olympiad. **The team won silverware in Saudi Arabia.** Topics covered: deep learning fundamentals and why it works, reinforcement learning, training best practices.
 
-### Machine Learning Engineer | mPower Social Enterprises Ltd.
+### Machine Learning Engineer · mPower Social Enterprises Ltd.
 *December 2023 – July 2025 · Part-time*
 
-Fine-tuned CV models (YOLO, PyTorch) with ~9% accuracy improvement. Built RAG, TIR and prompt engineering pipelines to optimise LLM reasoning and reduce inference costs. Developed OCR pipelines for document understanding and researched ASR for accented Bangla.
+Fine-tuned computer vision models (YOLO, PyTorch), improving detection accuracy by ~9%. Built RAG, TIR, and prompt engineering pipelines to optimise LLM reasoning via LangChain, SymPy, and Chroma — reducing inference cost through test-time scaling. Developed OCR pipelines for document understanding and researched ASR for accented Bangla.
 
-### Trainee Backend Engineer | mPower Social Enterprises Ltd.
+### Trainee Backend Engineer · mPower Social Enterprises Ltd.
 *November 2022 – August 2023*
 
-Built a backend wrapper over a large PostgreSQL database — generating lazy tables and optimised queries via an interactive dashboard.
+Built a backend wrapper over a large, mature PostgreSQL database to generate lazy tables and optimised queries via an interactive dashboard.
 
 ---
 
 ## Education & Research
 
-### MSc in Software Engineering | University of Dhaka
+### MSc in Software Engineering · University of Dhaka
 *Institute of Information Technology · 2024 – 2025 · GPA 4.00 / 4.00*
 
-Research on continual learning: developing models with better stability and plasticity, and studying how neural networks store knowledge and concepts.
+Research on continual learning: models with better stability and plasticity, and how neural networks store and retrieve knowledge and concepts.
 
-**Publication** — *Concept Inconsistency: Using Concept Level Information Learned by Deep Learning Models to Improve Training* · 29th International Conference on Knowledge-Based and Intelligent Information Engineering Systems
+**Publication** — [*Concept Inconsistency: Using Concept Level Information Learned by Deep Learning Models to Improve Training*](# "add link") · 29th International Conference on Knowledge-Based and Intelligent Information Engineering Systems (KES 2025)
 
-### BSc in Software Engineering | University of Dhaka
+### BSc in Software Engineering · University of Dhaka
 *Institute of Information Technology · 2019 – 2023 · GPA 3.94 / 4.00*
 
 Notable courses: DSA, distributed systems, system design and software architecture, design patterns, information security.
@@ -68,11 +59,14 @@ Activities: Competitive programming trainer, AI mentor.
 
 ---
 
-## Teaching
+## Competitions
 
-**BRAC University** · Spring 2026 – Present
+Top placements in national ML competitions:
 
-CSE220 Data Structures Lab · CSE423 Computer Graphics Lab · CSE470 Software Engineering
+- **Top 10** of 240 teams — Robi Datathon 3.0, 2024
+- **3rd** of 98 teams — DL Enigma 2024, SUST · vehicle detection for autonomous driving
+- **2nd** of 49 teams — Bhashamool 2024, UIU · Bengali IPA translation
+- **2nd** of 94 teams — DLSprint 2, Buet CSE Fest 2023 · Bangla document layout analysis
 
 ---
 

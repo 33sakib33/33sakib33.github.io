@@ -1,6 +1,8 @@
 ---
 title: "Blog"
-description: "Writing on machine learning, deep learning research, and occasional fiction."
+description: "Writing on machine learning, research, and everything else."
 ---
 
-A place for technical notes, research summaries, tutorials, personal essays, and short fiction. Use **Categories** to filter by topic, or browse everything below.
+Technical notes, research thinking, and occasional fiction. No fixed schedule — I write when I have something to say.
+
+Filter by tag or browse everything below.
