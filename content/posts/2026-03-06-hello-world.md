@@ -30,7 +30,7 @@ I also watch too many films and read too little fiction, which I am trying to fi
 
 No fixed schedule. I will write when I have something to say. You can subscribe via [RSS](/index.xml) if you want to be notified.
 
-If you want to reach me, links are on the [Portfolio](/portfolio/) page.
+If you want to reach me, links are on the [About](/about/) page.
 
 ---
 

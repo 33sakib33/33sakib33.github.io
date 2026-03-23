@@ -55,7 +55,7 @@ params:
     enabled: true
     title: Nazmus Sakib Ahmed
     subtitle: "ML Researcher · Lecturer at BRAC University · Co-founder at Factoryze"
-    imageUrl: "images/profile.jpg"
+    imageUrl: "/images/profile.jpg"
     imageWidth: 140
     imageHeight: 140
     imageTitle: Nazmus Sakib Ahmed
@@ -76,8 +76,6 @@ params:
       url: "https://www.linkedin.com/in/33sakib33/"
     - name: github
       url: "https://github.com/33sakib33"
-    - name: facebook
-      url: "https://www.facebook.com/not.sakib"
     - name: rss
       url: "/index.xml"
 
