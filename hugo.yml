@@ -52,7 +52,7 @@ params:
     iconHeight: 35
 
   profileMode:
-    enabled: true
+    enabled: false
     title: Nazmus Sakib Ahmed
     subtitle: "Researching how AI learns. Building with it. Teaching it."
     imageUrl: "/images/profile.jpg"

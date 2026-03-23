@@ -1,0 +1,79 @@
+{{- define "main" }}
+<div class="home-container">
+
+  {{/* ── HERO ──────────────────────────────────────────── */}}
+  <section class="home-hero">
+
+    <div class="home-identity">
+      <img
+        src="/images/profile.jpg"
+        alt="Nazmus Sakib Ahmed"
+        class="home-photo"
+      >
+      <nav class="home-social" aria-label="Social links">
+        <a href="https://www.linkedin.com/in/33sakib33/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://github.com/33sakib33" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="mailto:33sakib33@gmail.com">Email</a>
+      </nav>
+    </div>
+
+    <div class="home-content">
+      <div class="home-heading">
+        <h1 class="home-name">Nazmus Sakib Ahmed</h1>
+        <p class="home-tagline">Researching how AI learns. Building with it. Teaching it.</p>
+      </div>
+
+      <p class="home-bio">
+        I study how neural networks store and forget knowledge. I also build products
+        with those same networks through
+        <a href="https://www.factoryze.tech" target="_blank" rel="noopener noreferrer">Factoryze</a>
+        &mdash; the gap between understanding something and actually deploying it
+        is where most of the interesting problems live.
+      </p>
+
+      <div class="home-now">
+        <p class="home-label">Now</p>
+        <ul>
+          <li>
+            <b>Lecturer</b>
+            <span>BRAC University &thinsp;&middot;&thinsp; CSE220, CSE423, CSE470</span>
+          </li>
+          <li>
+            <b>Co-founder</b>
+            <span>
+              <a href="https://www.factoryze.tech" target="_blank" rel="noopener noreferrer">Factoryze</a>
+            </span>
+          </li>
+          <li>
+            <b>Trainer</b>
+            <span>Bangladesh AI Olympiad <span class="home-badge">🥈 Saudi Arabia</span></span>
+          </li>
+          <li>
+            <b>Researcher</b>
+            <span>Continual Learning &thinsp;&middot;&thinsp; University of Dhaka</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+  </section>
+
+  {{/* ── WRITING ────────────────────────────────────────── */}}
+  {{- $posts := where .Site.RegularPages "Section" "posts" }}
+  {{- if $posts }}
+  <section class="home-writing">
+    <p class="home-label">Writing</p>
+    <div class="home-posts">
+      {{- range first 5 $posts }}
+      <a href="{{ .RelPermalink }}" class="home-post-row">
+        <span class="home-post-title">{{ .Title }}</span>
+        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2006" }}</time>
+      </a>
+      {{- end }}
+    </div>
+    <a href="/posts/" class="home-all">All posts &rarr;</a>
+  </section>
+  {{- end }}
+
+</div>
+{{- end }}
