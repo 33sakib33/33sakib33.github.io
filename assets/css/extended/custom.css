@@ -42,7 +42,7 @@
   height: 160px;
   border-radius: 50%;
   object-fit: cover;
-  object-position: center top;
+  object-position: center center;
   display: block;
 }
 
@@ -57,19 +57,22 @@
   display: block;
   text-align: center;
   font-size: 0.78rem;
-  letter-spacing: 0.02em;
-  color: var(--secondary);
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: var(--primary);
   text-decoration: none;
-  padding: 0.38rem 0.5rem;
-  border: 1px solid var(--border);
+  padding: 0.45rem 0.75rem;
+  background: var(--entry);
+  border: 1.5px solid var(--tertiary);
   border-radius: var(--radius);
-  transition: color 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease, transform 0.1s ease;
 }
 
 .home-social a:hover {
-  color: var(--primary);
-  border-color: var(--tertiary);
-  background: var(--entry);
+  background: var(--tertiary);
+  border-color: var(--secondary);
+  transform: translateY(-1px);
 }
 
 
