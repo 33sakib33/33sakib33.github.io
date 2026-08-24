@@ -1,5 +1,5 @@
 ---
-title: "Training GANN models: Part 2"
+title: "Training GANN models"
 date: 2026-08-25T12:00:00
 draft: false
 categories: ["Technical"]

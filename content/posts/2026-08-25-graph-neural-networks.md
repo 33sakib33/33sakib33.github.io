@@ -1,5 +1,5 @@
 ---
-title: "Graph Neural Networks"
+title: "Graph Neural Networks Are Cool"
 date: 2026-08-25
 draft: false
 categories: ["Technical"]
