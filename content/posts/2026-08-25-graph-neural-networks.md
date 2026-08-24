@@ -1,6 +1,6 @@
 ---
 title: "Graph Neural Networks Are Cool"
-date: 2026-08-25
+date: 2026-08-24
 draft: false
 categories: ["Technical"]
 tags: ["gnn", "deep-learning", "graph-neural-networks"]

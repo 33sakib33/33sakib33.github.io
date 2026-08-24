@@ -1,6 +1,6 @@
 ---
 title: "Training GANN models"
-date: 2026-08-25T12:00:00
+date: 2026-08-24T12:00:00
 draft: false
 categories: ["Technical"]
 tags: ["gann", "dcgan", "deep-learning", "generative-models"]
