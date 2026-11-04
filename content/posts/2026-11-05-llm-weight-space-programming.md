@@ -20,9 +20,9 @@ math: true
 
 I gave a language model the raw weights of a small neural network as plain text, with no tools and no way to run it. The network had been stopped after just three training updates. The model replied that the drift in the weights "matches about 3 Adam steps at a learning rate near 0.001."
 
-It was right, even though nothing in the prompt mentioned how the network was trained. It got there by noticing batch norm weights sitting between $0.997$ and $1.003$, and running variances bottoming out just above $0.729$—which is $0.9$ cubed ($0.9^3$). 
+It was right, even though nothing in the prompt mentioned how the network was trained. It got there by noticing batch norm weights sitting between 0.997 and 1.003, and running variances bottoming out just above 0.729—which is 0.9 cubed (0.93). 
 
-At first glance, that looks like deep, abstract reasoning in a mathematical space. On closer inspection, however, the model succeeded by leveraging its familiarity with framework defaults—it recognized PyTorch's default initialization bounds and batch norm's default momentum of $0.1$ and matched the statistics against those known patterns.
+At first glance, that looks like deep, abstract reasoning in a mathematical space. On closer inspection, however, the model succeeded by leveraging its familiarity with framework defaults—it recognized PyTorch's default initialization bounds and batch norm's default momentum of 0.1 and matched the statistics against those known patterns.
 
 Next, I gave it a network trained to 99.57% accuracy on satellite images. The model correctly identified an internal feature that responds to dark green and tied it to output 4. In this dataset, output 4 is "trees," and the feature really does fire most strongly on trees. 
 
@@ -51,7 +51,7 @@ I explored the reading side of this phenomenon using Claude Opus 5.5. Because I 
 - **Networks:** I trained small, unpublished CNNs of about 125,000 weights each, consisting of three blocks of convolution, ReLU, max pooling, and batch norm, followed by two linear layers. **Model 1** uses standard filter counts (`16, 32, 64`). **Model 2** uses unusual filter counts (`13, 33, 77`). A third **Random** architecture (`62, 68, 25`) was chosen by a seeded random draw to match Model 1's exact parameter count.
 - **Prompt:** Each prompt contained the network's layer formulas followed by every weight as plain text, rounded to 3 decimal places. I omitted the dataset name, class names, normalization constants, and training details.
 - **Isolation:** Every question went to a fresh Opus 5.5 session at extra-high effort, running in a randomly named empty folder with no tools and no memory.
-- **Verification:** I rebuilt each network directly from the prompt text and evaluated it to confirm the model was reading a working classifier. Afterward, verification scripts checked every weight value and statistic quoted in the model's response against the actual parameters.
+- **Verification:** I rebuilt each network directly from the prompt text and evaluated it to confirm the model was reading a working classifier. Afterward, verification scripts checked the specific values I could locate in the model's response against the actual parameters.
 - **Scoring:** All scoring criteria were written down before sending the prompts (excluding the first two trial runs). I ran the pipeline through Claude Code, using subagents for training and Python scripts for verification.
 
 ---
@@ -121,7 +121,7 @@ Notably, the standard CIFAR-10 session explicitly drew the line between what it 
 
 ### Does network accuracy matter?
 
-Because the fast food classifier was both an obscure dataset and weakly trained (~55% accuracy), it couldn't separate dataset familiarity from model quality. **SAT-6** can. It is a less-known dataset of 32×32 satellite image patches across six classes: `barren land`, `building`, `grassland`, `road`, `trees`, and `water`. It is also easy to learn, reaching roughly 90% accuracy from just 24 training images. To create a low-accuracy counterpart with the exact same data, architecture (Model 2), and prompt, I stopped training after three updates:
+Because the fast food classifier was both an obscure dataset and weakly trained (~55% accuracy), it couldn't separate dataset familiarity from model quality. **SAT-6** can. It is a less-known dataset of 28×28 satellite image patches, resized to 32×32 across six classes: `barren land`, `building`, `grassland`, `road`, `trees`, and `water`. It is also easy to learn, reaching roughly 90% accuracy from just 24 training images. To create a low-accuracy counterpart with the exact same data, architecture (Model 2), and prompt, I stopped training after three updates:
 
 | SAT-6 (Model 2) | Test Accuracy | Macro F1 | Image Type | Classes in Any Position | Name Given | Confidence (Type / Classes) |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -163,7 +163,7 @@ Tracing a weight flow means following how signals propagate from the input pixel
 Whenever a session did attempt to make claims based on multi-layer tracing, those claims failed verification against the actual weights:
 
 - **"Top-heavy" spatial evidence:** One session sampled 10 of the 78 hidden units, claimed class evidence was concentrated at the top of the image, and used that to argue for "heads and ears." Across all 78 hidden units, however, spatial importance actually peaks in the second row (`0.109, 0.144, 0.107, 0.092`).
-- **Misread deep features:** The SAT-6 session labeled a deep feature "blue" and used it to argue for a sky background ("bird"). When run on the dataset, that feature fires primarily on grassland and road, and activates below average on water.
+- **Misread deep features:** The SAT-6 session labeled a deep feature "blue" and used it to argue that output 0 was bird(which is interesting that it thinks blue is related to bird). When run on the dataset, that feature fires primarily on grassland and road, and activates below average on water.
 - **Indexing errors:** Another session quoted real weight values from the prompt, but off-by-two indexing assigned them to the wrong input channels, invalidating the deduction built on top of them.
 
 ---
@@ -193,13 +193,13 @@ It seems the model can calculate the parameters' specific local properties—det
 ### What this doesn't show
 
 - **It doesn't refute the MIT CSAIL paper.** I tested a different model (Claude Opus 5.5 vs. GPT-6 Astra) on a single task. Their claims about initializing networks from scratch and surgically editing language models are untouched by these results.
+
 - **The experimental setups differ in a crucial way.** In Experiment 1 of the MIT paper, the prompt explicitly labeled what each input channel represented (e.g., "agent" and "reward targets"), and the first-layer weights mapped directly onto those labeled grid coordinates. My prompts gave no semantic labels for the outputs, and raw RGB pixels don't carry symbolic channel labels.
 - **Sample sizes are tiny.** Most configurations were run once, on a single random seed, with a single model.
 - **Weight editing remains untested.**
 
 ### Some things to note:
 
-- **The KMNIST input was standardized differently.** Due to an inconsistency in padding on grayscale images, the background value was shifted to -0.47 instead of the typical -0.55. Sessions compared against the standard -0.55, which may have contributed to rejecting KMNIST.
 - **Three sessions hit the output ceiling.** The shuffled CIFAR-10 run, the KMNIST random-architecture run, and the high-accuracy SAT-6 run all exhausted their 128,000-token limit and received an automated "resume" prompt, making those transcripts slightly different from the single-turn sessions.
 
 ---
@@ -248,7 +248,7 @@ If you wanted to continue testing the bounds of what LLMs can read in weight-spa
 
 *(Note: I also ran SAT-6 Model 1 at low accuracy [63.36%]. It declined to guess, listing every class as unknown at 1% confidence while correctly inferring ~3 Adam steps. Because its high-accuracy counterpart was stopped before completion, Model 1 was omitted from the SAT-6 comparison table.)*
 
-- **Training protocol:** Adam (`lr = 1e-3`), batch size 128, learning rate halved on plateau, early stopping with patience 10, up to 100 epochs, seed 0. Images were resized to 32×32, except KMNIST, which was padded from 28×28 to 32×32 and replicated across three channels. Total API cost across completed sessions was approximately $121, excluding stopped sessions.
+- **Training protocol:** Adam (`lr = 1e-3`), batch size 128, learning rate halved on plateau, early stopping with patience 10, up to 100 epochs, seed 0. Images were resized to 32×32, except KMNIST, which was padded from 28×28 to 32×32 and replicated across three channels.
 - **Datasets tested:** CIFAR-10, KMNIST, Cats vs Dogs, Fast Food Classification, and SAT-6.
 
 ### The Prompt (Revised Version, SAT-6 Model 2)
@@ -318,3 +318,5 @@ Rikiya Takehi, Jayden Teoh, Alex Zhang, and Omar Khattab. [*Sparks of Weight-Spa
   note         = {Blog post, Latent Space}
 }
 ```
+
+
