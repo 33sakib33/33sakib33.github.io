@@ -33,7 +33,7 @@ This encapsulates the question at the heart of this exploration: Is a language m
 
 ## The Claim, and an Inquiry Into Weight Spaces
 
-In November 2026, Rikiya Takehi, Jayden Teoh, Alex Zhang, and Omar Khattab of MIT CSAIL published *"Sparks of Weight-Space Programming."* They report that GPT-6 Astra can read and write neural network weights directly, without gradient descent. In one experiment, it named which grid game each of four identically shaped networks was trained on, working from the weights alone.
+In November 2026, Rikiya Takehi, Jayden Teoh, Alex Zhang, and Omar Khattab of MIT CSAIL published *["Sparks of Weight-Space Programming."](https://rikiyat.github.io/blog/weight-space-programming/)* They report that GPT-6 Astra can read and write neural network weights directly, without gradient descent. In one experiment, it named which grid game each of four identically shaped networks was trained on, working from the weights alone.
 
 I wanted to investigate if something less abstract was at play: Is the model actually reasoning through the network's calculations, or is it matching against datasets, architectures, and templates it already knows? A network with 32×32 inputs and 10 outputs already looks like CIFAR-10 before a single weight is read. If you change what the model expects—such as the label order or the underlying dataset—does the interpretation hold up?
 
@@ -296,3 +296,24 @@ conv1.bias, shape 13:
 {{conv1.bias}}
 
 (The same format continues for bn1, conv2, bn2, conv3, bn3, fc1 and fc2.)
+
+```
+
+---
+
+## References
+
+Rikiya Takehi, Jayden Teoh, Alex Zhang, and Omar Khattab. [*Sparks of Weight-Space Programming: LLMs can natively read & write neural network weights*](https://rikiyat.github.io/blog/weight-space-programming/). November 2026.
+
+### BibTeX
+
+```bibtex
+@misc{takehi2026weightspace,
+  title        = {{Sparks of Weight-Space Programming: LLMs can natively read \& write neural network weights}},
+  author       = {Takehi, Rikiya and Teoh, Jayden and Zhang, Alex and Khattab, Omar},
+  year         = {2026},
+  month        = nov,
+  howpublished = {\url{https://rikiyat.github.io/blog/weight-space-programming/}},
+  note         = {Blog post}
+}
+```
