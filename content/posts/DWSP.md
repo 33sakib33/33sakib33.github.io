@@ -1,11 +1,12 @@
 ---
-title: "Can an LLM Actually Reason and Program about Neural Network's Weights or is it just table memorization? Exploring 'Weight-Space Programming'"
+title: "Can an LLM Actually Reason and Program about Neural Network's Weights or is it just memorization on steroids? Exploring 'Weight-Space Programming'"
 date: 2026-11-05T00:00:00+06:00
 draft: false
 categories: ["Technical"]
 tags: ["llms", "interpretability", "neural-networks"]
 description: "Is 'Weight-Space Programming' genuine abstract reasoning, or is it a clever blend of highly localized math and memorized pattern-matching?"
 ShowToc: true
+math: true
 ---
 
 ![An isometric diagram of five neural network layers where only the first and last layers are sharply inspected, while a frog stencil is held over a satellite forest patch.](/images/dwsp/image-1-hero.jpg)

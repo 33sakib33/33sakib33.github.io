@@ -23,7 +23,7 @@ Building AI-powered products end to end — from architecture to deployment. Wor
 ### Lecturer · BRAC University
 *January 2026 – Present*
 
-Teaching undergraduate computer science. Courses this semester: Data Structures Lab (CSE220), Computer Graphics Lab (CSE423), Software Engineering (CSE470). If you're one of my students, feel free to reach out by email for anything course-related.
+Teaching undergraduate computer science. Courses this semester: Software Engineering (CSE470), System Analysis and Design (CSE471), Artificial Intelligence (CSE422). If you're one of my students, feel free to reach out by email for anything course-related.
 
 ### Academic Trainer & Problem Setter · Bangladesh AI Olympiad
 *June 2024 – Present*
