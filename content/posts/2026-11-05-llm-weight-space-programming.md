@@ -2,6 +2,7 @@
 title: "Can an LLM Actually Reason and Program about Neural Network's Weights or is it just memorization on steroids? Exploring 'Weight-Space Programming'"
 date: 2026-11-05T00:00:00+06:00
 draft: false
+aliases: ["/posts/dwsp/"]
 categories: ["Technical"]
 tags: ["llms", "interpretability", "neural-networks"]
 description: "Is 'Weight-Space Programming' genuine abstract reasoning, or is it a clever blend of highly localized math and memorized pattern-matching?"
@@ -313,7 +314,7 @@ Rikiya Takehi, Jayden Teoh, Alex Zhang, and Omar Khattab. [*Sparks of Weight-Spa
   author       = {Ahmed, Nazmus Sakib},
   year         = {2026},
   month        = nov,
-  howpublished = {\url{https://sakibbai.com/posts/dwsp/}},
+  howpublished = {\url{https://sakibbai.com/posts/2026-11-05-llm-weight-space-programming/}},
   note         = {Blog post, Latent Space}
 }
 ```
