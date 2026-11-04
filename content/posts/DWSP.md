@@ -305,15 +305,15 @@ conv1.bias, shape 13:
 
 Rikiya Takehi, Jayden Teoh, Alex Zhang, and Omar Khattab. [*Sparks of Weight-Space Programming: LLMs can natively read & write neural network weights*](https://rikiyat.github.io/blog/weight-space-programming/). November 2026.
 
-### BibTeX
+## Cite this Article
 
 ```bibtex
-@misc{takehi2026weightspace,
-  title        = {{Sparks of Weight-Space Programming: LLMs can natively read \& write neural network weights}},
-  author       = {Takehi, Rikiya and Teoh, Jayden and Zhang, Alex and Khattab, Omar},
+@misc{ahmed2026llmweights,
+  title        = {{Can an {LLM} Actually Reason and Program about Neural Network's Weights or is it just memorization on steroids? {Exploring} 'Weight-Space Programming'}},
+  author       = {Ahmed, Nazmus Sakib},
   year         = {2026},
   month        = nov,
-  howpublished = {\url{https://rikiyat.github.io/blog/weight-space-programming/}},
-  note         = {Blog post}
+  howpublished = {\url{https://sakibbai.com/posts/dwsp/}},
+  note         = {Blog post, Latent Space}
 }
 ```
