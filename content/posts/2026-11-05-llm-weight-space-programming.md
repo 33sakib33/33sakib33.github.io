@@ -12,7 +12,7 @@ math: true
 
 ![An isometric diagram of five neural network layers where only the first and last layers are sharply inspected, while a frog stencil is held over a satellite forest patch.](/images/dwsp/image-1-hero.jpg)
 
-*[Image 1: Hero image — An isometric diagram of five neural network layers on a warm off-white background where only the first and last layers are sharply inspected, while a geometric frog stencil is aligned over a satellite forest patch.]*
+*Image 1: Hero image*
 
 **TL;DR:** Can a large language model inspect a neural network’s raw, isolated parameters as plain text and reliably determine what the network was trained to do? My tests suggest that while LLMs can perform surprisingly precise calculations at the "edges" of a network (estimating optimizer step counts or finding output correlations), they do not "trace" the computational paths between layers. Instead, they rely heavily on memorized dataset templates (like CIFAR-10) and default framework conventions to fill in the blanks. When these expectations are changed, the models can identify the math but will confidently guess wrong about the semantics—such as recognizing that a satellite feature maps to output 4, but calling it a "frog" because it expects an animal.
 
@@ -46,7 +46,7 @@ I explored the reading side of this phenomenon using Claude Opus 5.5. Because I 
 
 ![Diagram: train a small CNN, print its 125,000 weights as text, open a new session with no memory, ask what images and classes, then check every number.](/images/dwsp/image-2-experiment.jpg)
 
-*[Image 2: Experiment diagram — Train a small CNN → Extract weights as text (~125k values) → New isolated session with no tools or memory → Prompt with "What images? What classes?" → Verify model responses against the actual network.]*
+*Image 2: Experiment diagram*
 
 - **Networks:** I trained small, unpublished CNNs of about 125,000 weights each, consisting of three blocks of convolution, ReLU, max pooling, and batch norm, followed by two linear layers. **Model 1** uses standard filter counts (`16, 32, 64`). **Model 2** uses unusual filter counts (`13, 33, 77`). A third **Random** architecture (`62, 68, 25`) was chosen by a seeded random draw to match Model 1's exact parameter count.
 - **Prompt:** Each prompt contained the network's layer formulas followed by every weight as plain text, rounded to 3 decimal places. I omitted the dataset name, class names, normalization constants, and training details.
@@ -62,7 +62,7 @@ On CIFAR-10, both sessions named the dataset outright at 90% and 92% confidence,
 
 ![Heatmap of seven hidden units splitting outputs 0-9 into vehicles (0, 1, 8, 9) and animals (2-7).](/images/dwsp/image-3-output-split.jpg)
 
-*[Image 3: The pattern it found — Heatmap of seven hidden units splitting outputs 0–9 into vehicles (0, 1, 8, 9) and animals (2–7).]*
+*Image 3: The pattern it found*
 
 To see whether the model was deriving the classes from the features or leaning on CIFAR-10's known ordering, I ran two controls on Model 1:
 
@@ -76,7 +76,7 @@ Permuting the output labels broke the model's class assignments completely. The 
 
 ![Left: outputs 2, 4, 5, 7 grouped together. Right: the model's labels bird, deer, dog, and horse mapped to those outputs.](/images/dwsp/image-4-reading-vs-naming.jpg)
 
-*[Image 4: Reading against naming — Left: What it read correctly (outputs 2, 4, 5, 7 grouped together). Right: What it said they meant (2: bird [really airplane], 4: deer [really automobile], 5: dog [really ship], 7: horse [really truck]).]*
+*Image 4: Reading against naming*
 
 The shuffled control was also telling. Confidence dropped to 45%, and the session rightly noted that the internal structure was gone, adding that its CIFAR-10 guess "relies partly on it being the most common dataset." However, it never realized the weights had been scrambled, and it still claimed to see evidence of "colour natural images" in pure noise.
 
@@ -140,7 +140,7 @@ Comparing what the high-accuracy session extracted from the weights against grou
 
 ![Satellite view of dark green forest next to a close-up of a green frog, connected by a line of weight values.](/images/dwsp/image-5-frog.jpg)
 
-*[Image 5: Same reading, wrong meaning — An overhead satellite view of dark green forest beside a close-up of a green frog, joined by a single line of numbers.]*
+*Image 5: Same reading, wrong meaning*
 
 The model found genuine low-level and output-level correlations, but without a memorized template for SAT-6, it forced those features into the nearest familiar category: CIFAR-10 animals.
 
@@ -158,7 +158,7 @@ Tracing a weight flow means following how signals propagate from the input pixel
 
 ![Network diagram with conv1 and fc2 read closely and conv2, conv3, fc1 sampled sparsely.](/images/dwsp/image-7-coverage.jpg)
 
-*[Image 7: Where the sessions actually looked — Read closely at the edges (`conv1` and `fc2`), sampled sparsely in the middle (`conv2`, `conv3`, `fc1`).]*
+*Image 7: Where the sessions actually looked*
 
 Whenever a session did attempt to make claims based on multi-layer tracing, those claims failed verification against the actual weights:
 
@@ -182,7 +182,7 @@ Whenever a session did attempt to make claims based on multi-layer tracing, thos
 
 ![Bar chart of confidence in image type by experiment.](/images/dwsp/image-6-confidence.jpg)
 
-*[Image 6: Confidence in image type (new question) — CIFAR-10 standard: 95% (correct), CIFAR-10 random: 92% (correct), KMNIST standard: 85% (partial), SAT-6 high accuracy: 70% (wrong), SAT-6 low accuracy: 30% (partial).]*
+*Image 6: Confidence in image type*
 
 The evidence points to a consistent conclusion: language models can spot real statistical patterns in raw parameters, but they interpret those patterns by matching them against familiar models, datasets, and framework defaults.
 
