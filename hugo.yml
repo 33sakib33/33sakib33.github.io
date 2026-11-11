@@ -116,6 +116,10 @@ menu:
       name: Projects
       url: /projects/
       weight: 20
+    - identifier: research
+      name: Research
+      url: /research/
+      weight: 25
     - identifier: about
       name: About
       url: /about/

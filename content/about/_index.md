@@ -49,7 +49,7 @@ Built a backend wrapper over a large, mature PostgreSQL database to generate laz
 
 Research on continual learning: models with better stability and plasticity, and how neural networks store and retrieve knowledge and concepts.
 
-**Publication** — [*Concept Inconsistency: Using Concept Level Information Learned by Deep Learning Models to Improve Training*](# "add link") · 29th International Conference on Knowledge-Based and Intelligent Information Engineering Systems (KES 2025)
+**Publication** — [*Concept Inconsistency: Using Concept Level Information Learned by Deep Learning Models to Improve Training*](https://doi.org/10.1016/j.procs.2025.09.457) · 29th International Conference on Knowledge-Based and Intelligent Information Engineering Systems (KES 2025)
 
 ### BSc in Software Engineering · University of Dhaka
 *Institute of Information Technology · 2019 – 2023 · GPA 3.94 / 4.00*
